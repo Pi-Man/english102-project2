@@ -12,9 +12,9 @@ const size = imgs.length;
 
 let index = 0;
 
-const img = document.querySelector('button');
+const button = document.querySelector('button');
 
-img.onclick = function() {
+button.onclick = function() {
     index = (index + 1) % size;
-    img.setAttribute("src", imgs[index]);
+    button.children[0].setAttribute("src", imgs[index]);
 }
