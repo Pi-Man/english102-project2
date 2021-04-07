@@ -7,6 +7,14 @@ header {
   padding: 2em 0;
 }
 
+figure {
+  margin: 0;
+}
+
+div.left button figure figcaption {
+  text-align: left;
+}
+
 hr {
   height: 20px;
   border-width: 0;

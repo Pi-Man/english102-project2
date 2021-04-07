@@ -16,5 +16,5 @@ const button = document.querySelector('button');
 
 button.onclick = function() {
     index = (index + 1) % size;
-    button.children[0].setAttribute("src", imgs[index]);
+    button.children[0].children[0].setAttribute("src", imgs[index]);
 }
