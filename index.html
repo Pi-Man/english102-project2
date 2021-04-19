@@ -15,6 +15,7 @@
         <span>pick the right tool for the job</span>
       </h1>
     </header>
+    
     <main>
       <section>
         <h2>Situation 1</h2>
@@ -34,12 +35,14 @@
         </div><div class="right">
           <h3>Technique</h3>
           <p>Differential Evolution (DE) is the best choice for this situation. In a <a href="https://doi.org/10.1016/j.arcontrol.2020.10.001" target="_blank" rel="noopener noreferrer">study done by Ad Wahab et al.</a> it was shown that DE had the least battery consumption when navigating an unknown environment.</p>
-          <figure>
-            <img src="https://ars.els-cdn.com/content/image/1-s2.0-S1367578820300675-gr5_lrg.jpg" alt="graph showing various properties compared to several classical and meta-heuristic techniques">
-            <figcaption>
-              <a href="https://doi.org/10.1016/j.arcontrol.2020.10.001" target="_blank" rel="noopener noreferrer">Ad Wahab et al.</a>
-            </figcaption>
-          </figure>
+          <button class="imgZoom">
+            <figure>
+              <img src="https://ars.els-cdn.com/content/image/1-s2.0-S1367578820300675-gr5_lrg.jpg" alt="graph showing various properties compared to several classical and meta-heuristic techniques">
+              <figcaption>
+                <a href="https://doi.org/10.1016/j.arcontrol.2020.10.001" target="_blank" rel="noopener noreferrer">Ad Wahab et al.</a>
+              </figcaption>
+            </figure>
+          </button>
           <!--<div class="inner-right">
             <header>
               <h2>Meta-Heuristic</h2>
@@ -55,7 +58,9 @@
           </div>-->
         </div>
       </section>
+      
       <hr>
+      
       <section>
         <h2>Situation 2</h2>
         <div class="left">
@@ -90,7 +95,9 @@
           </figure>
         </div>
       </section>
+      
       <hr>
+      
       <section>
         <h2>Situation 3</h2>
         <div class="left">
@@ -107,12 +114,14 @@
         </div><div class="right">
           <h3>Technique</h3>
           <p>A* + Least Squares Policy Iteration (A* + LSPI) is a technique developed specifically for this situation.  In a <a href="https://doi.org/10.1016/j.neucom.2014.09.092" target="_blank" rel="noopener noreferrer">paper by Zuo, L. et al.</a>, this technique was compared to A* and RRT, and it is shown that this technique leads to a near optimal path that conforms to the kinematic constraints of the robot and does not increase computation time by a large amount.</p>
-          <figure>
-            <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0925231215005676-gr6_lrg.jpg" alt="comparison of A* + LSPI to RRT">
-            <figcaption>
-              <a href="https://doi.org/10.1016/j.neucom.2014.09.092" target="_blank" rel="noopener noreferrer">Zuo, L. et al.</a>
-            </figcaption>
-          </figure>
+          <button class="imgZoom">
+            <figure>
+              <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0925231215005676-gr6_lrg.jpg" alt="comparison of A* + LSPI to RRT">
+              <figcaption>
+                <a href="https://doi.org/10.1016/j.neucom.2014.09.092" target="_blank" rel="noopener noreferrer">Zuo, L. et al.</a>
+              </figcaption>
+            </figure>
+          </button>
           <!--<div class="inner-right">
             <header>
               <h2>Hierarchical/Combined</h2>
@@ -127,7 +136,9 @@
           </div>-->
         </div>
       </section>
+      
       <hr>
+      
       <section>
         <h2>Other Techniques</h2>
         <ul>
@@ -142,12 +153,20 @@
         </ul>
       </section>
     </main>
+    
+    <figure id="imgModal">
+      <button class="closeModal">&times;</button>
+      <img class="fullSize">
+      <figcaption></figcaption>
+    </figure>
+    
     <footer>
       Peter Joyce<br>
       <time datetime="2021-4-18">April 18, 2021</time><br>
       Section: 073<br>
       Digital Poster
     </footer>
+    
     <script src="scripts/main.js"></script>
   </body>
 </html> 

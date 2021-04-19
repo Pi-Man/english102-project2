@@ -1,20 +1,20 @@
-const imgs = [
-  "images/14420366_p0_master1200.jpg",
-  "images/65202590_p1_master1200.jpg",
-  "images/65387186_p0_master1200.jpg",
-  "images/66095400_p0_master1200.jpg",
-  "images/66537867_p0_master1200.jpg",
-  "images/84418556_p0_master1200.jpg",
-  "https://ars.els-cdn.com/content/image/1-s2.0-S1367578820300675-gr5_lrg.jpg"
-];
+const imageButtons = document.querySelectorAll("button.imgZoom");
 
-const size = imgs.length;
+const imageModal = document.getElementById("imgModal");
 
-let index = 0;
+for (i = 0; i < imageButtons.length; i++) {
+  button = imageButtons[i];
+  button.onclick = function() {
+    const img = this.children[0].children[0];
+    const mimg = imageModal.children[1];
+    const capt = imageModal.children[2];
+    mimg.src = img.src;
+    mimg.alt = img.alt;
+    capt.innerHTML = img.alt;
+    imgModal.style.display = "block";
+  }
+}
 
-const button = document.querySelector('button');
-
-button.onclick = function() {
-    index = (index + 1) % size;
-    button.children[0].children[0].setAttribute("src", imgs[index]);
+imageModal.children[0].onclick = function() {
+  imageModal.style.display = "none";
 }
