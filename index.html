@@ -4,50 +4,71 @@
     <meta charset="utf-8">
     <title>Robot Path Planning</title>
     <link href="styles/style.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600&family=Slabo+27px&display=swap" rel="stylesheet">
   </head>
   <body>
   
     <header>
-      <h1>Path Planning Techniques</h1>
-      <p>pick the right tool for the job</p>
+      <h1>
+        Path Planning Techniques<br>
+        <span>pick the right tool for the job</span>
+      </h1>
     </header>
     <main>
-      <section class="a">
+      <section>
+        <h2>Situation 1</h2>
         <div class="left">
-          <button>
+          <h3>Environment</h3>
+          <p>Unknown obstacles: The technique has no prior knowledge of any obstacles.</p>
+          <h3>Optimizations</h3>
+          <p>Optimize for least battery consumption: We want to use the least amount of battery power to get from the start to the goal.</p>
+          <!--<button>
             <figure>
               <img src="https://ars.els-cdn.com/content/image/1-s2.0-S1367578820300675-gr5_lrg.jpg" alt="graph showing various properties compared to several classical and meta-heuristic techniques">
               <figcaption>
                 <a href=https://doi.org/10.1016/j.arcontrol.2020.10.001>Ad Wahab et al.</a>
               </figcaption>
             </figure>
-          </button>
+          </button>-->
         </div><div class="right">
-          <div class="inner-right">
+          <h3>Technique</h3>
+          <p>Differential Evolution (DE) is the best choice for this situation. In a <a href="https://doi.org/10.1016/j.arcontrol.2020.10.001" target="_blank" rel="noopener noreferrer">study done by Ad Wahab et al.</a> it was shown that DE had the least battery consumption when navigating an unknown environment.</p>
+          <figure>
+            <img src="https://ars.els-cdn.com/content/image/1-s2.0-S1367578820300675-gr5_lrg.jpg" alt="graph showing various properties compared to several classical and meta-heuristic techniques">
+            <figcaption>
+              <a href="https://doi.org/10.1016/j.arcontrol.2020.10.001" target="_blank" rel="noopener noreferrer">Ad Wahab et al.</a>
+            </figcaption>
+          </figure>
+          <!--<div class="inner-right">
             <header>
-              <h2>meta-heuristic</h2>
+              <h2>Meta-Heuristic</h2>
               <p>good for dynamic/unknown environments</p>
             </header>
-            <h3>examples</h3>
+            <h3>Examples</h3>
             <ul>
               <li>Genetic Algorithm</li>
               <li>Differential Evolution</li>
               <li>Particle Swarm Optimization</li>
               <li>Cuckoo Search Algorithm</li>
             </ul>
-          </div>
+          </div>-->
         </div>
       </section>
       <hr>
-      <section class="b">
+      <section>
+        <h2>Situation 2</h2>
         <div class="left">
-          <div class="inner-left">
+          <h3>Environment</h3>
+          <p>Complex and fully known and static obstacles: The technique is aware of all obstacles and their shapes/sizes which may be complex and of different sizes.  Additionally all obstacles are fixed and can not change.</p>
+          <h3>Optimizations</h3>
+          <p>Shortest computation time: We want to spend the least amount of time possible computing the path.</p>
+          <!--<div class="inner-left">
             <header>
-              <h2>classical</h2>
+              <h2>Classical</h2>
               <p>good for static and known environments</p>
             </header>
-            <h3>examples</h3>
+            <h3>Examples</h3>
             <ul>
               <li>A*</li>
               <li>Dijkstra's Algorithm</li>
@@ -55,46 +76,78 @@
               <li>Probabilistic Road Map</li>
               <li>Rapidly exploring Random Tree</li>
             </ul>
-          </div>
+          </div>-->
         </div><div class="right">
+          <h3>Technique</h3>
+          <p>Rapidly exploring Random Tree (RRT) works well for this situation.  It is a quick technique and we don't care about path length or unknown/dynamic obstacles.</p>
           <figure>
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/fCaexXIvFGY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            <div class="AR16-9">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/fCaexXIvFGY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
             <figcaption>
-              <a href="https://www.energid.com/blog/what-is-global-path-planning-how-does-it-compare-to-local-path-planning">Limone B.</a>
+              <a href="https://www.energid.com/blog/what-is-global-path-planning-how-does-it-compare-to-local-path-planning" target="_blank" rel="noopener noreferrer">Limone B.</a>
             </figcaption>
           </figure>
         </div>
       </section>
       <hr>
-      <section class="a">
+      <section>
+        <h2>Situation 3</h2>
         <div class="left">
-          <figure>
+          <h3>Environment</h3>
+          <p>Complex mostly known static obstacles: The technique is aware of all larger obstacles with some inaccuracy. Additionally, there may be other small obstacles that the technique is unaware of initially.</p>
+          <h3>Optimizations</h3>
+          <p>Shortest path and obey kinematic constraints, secondary optimization of low calculation time: We want the shortest path we can get while also conforming to the kinematic constraints of the robot.</p>
+          <!--<figure>
             <img src="images/wang8-WB2-3-large.gif" alt="comparison of path generated from PBPP to path generated from A*">
             <figcaption>
               <a href="https://ieeexplore-ieee-org.ezproxy1.library.arizona.edu/document/8571439">Wang, C. et al.</a>
             </figcaption>
-          </figure>
+          </figure>-->
         </div><div class="right">
-          <div class="inner-right">
+          <h3>Technique</h3>
+          <p>A* + Least Squares Policy Iteration (A* + LSPI) is a technique developed specifically for this situation.  In a <a href="https://doi.org/10.1016/j.neucom.2014.09.092" target="_blank" rel="noopener noreferrer">paper by Zuo, L. et al.</a>, this technique was compared to A* and RRT, and it is shown that this technique leads to a near optimal path that conforms to the kinematic constraints of the robot and does not increase computation time by a large amount.</p>
+          <figure>
+            <img src="https://ars.els-cdn.com/content/image/1-s2.0-S0925231215005676-gr6_lrg.jpg" alt="comparison of A* + LSPI to RRT">
+            <figcaption>
+              <a href="https://doi.org/10.1016/j.neucom.2014.09.092" target="_blank" rel="noopener noreferrer">Zuo, L. et al.</a>
+            </figcaption>
+          </figure>
+          <!--<div class="inner-right">
             <header>
-              <h2>hierarchical/combined</h2>
+              <h2>Hierarchical/Combined</h2>
               <p>can take the best properties of multiple algorithms</p>
             </header>
-            <h3>examples</h3>
+            <h3>Examples</h3>
             <ul>
               <li>A* + LSPI</li>
               <li>PBPP</li>
               <li>LBAS-PIO</li>
             </ul>
-          </div>
+          </div>-->
         </div>
       </section>
+      <hr>
+      <section>
+        <h2>Other Techniques</h2>
+        <ul>
+          <li>Genetic Algorithm (GA)</li>
+          <li>Particle Swarm Optimization (PSO)</li>
+          <li>Cuckoo Search Algorithm (CSA)</li>
+          <li>Dijkstra's Algorithm</li>
+          <li>Potential Field (PF)</li>
+          <li>Probabilistic Road Map (PRM)</li>
+          <li>Partition Based Path Planning (PBPP)</li>
+          <li>Logistics Beetle Algorithm Search - Pigeon Inspired Optimization (LBAS-PIO)</li>
+        </ul>
+      </section>
     </main>
-    
     <footer>
-      <a href="https://developer.mozilla.org/en-US/docs/Learn">Tutorial Link</a>
+      Peter Joyce<br>
+      <time datetime="2021-4-18">April 18, 2021</time><br>
+      Section: 073<br>
+      Digital Poster
     </footer>
-    
     <script src="scripts/main.js"></script>
   </body>
 </html> 
