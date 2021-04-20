@@ -1,16 +1,17 @@
 html {
-  font-family: "Cairo", sans-serif; /* this should be the rest of the output you got from Google fonts */
+  font-family: "Slabo 27px", serif;
   font-size: 1.2em;
+  text-align: center;
   line-height: 1;
   background-color: #808080;
 }
 
 header {
+  font-family: "Zen Dots", cursive;
   padding: 2em 0;
 }
 
 main {
-  font-family: "Slabo 27px", serif;
 }
 
 button {
@@ -53,11 +54,11 @@ div.inner-left {
 div.right {
   display: inline-block;
   width: calc(50% - 8em);
-  background-color: #10d060;
+  background-color: #20f080;
 }
 
 div.left {
-  background-color: #2090d0;
+  background-color: #40b0f0;
   display: inline-block;
   width: calc(50% - 8em);
 }
@@ -65,16 +66,13 @@ div.left {
 section {
   text-align: center;
   padding: 20px;
-}
-
-section {
-  background-color: #d06010;
+  background-color: #f0e080;
 }
 
 body {
   margin: 50px auto;
   max-width: 1200px;
-  background-color: #c80040;
+  background-color: #f0a05c;
   padding: 0 20px 20px 20px;
   border: 5px solid black;
 }
@@ -93,11 +91,13 @@ h2 {
   margin: 0;
   font-size: 2em;
   text-align: center;
+  font-family: "Zen Dots", cursive;
 }
 
 h3 {
   margin: 0;
   font-size: 1.5em;
+  font-family: "Zen Dots", cursive;
 }
 
 img {
